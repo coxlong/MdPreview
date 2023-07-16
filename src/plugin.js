@@ -7,6 +7,7 @@ OCA.Files.fileActions.registerAction({
   permissions: OC.PERMISSION_READ,
   iconClass: 'icon-file',
   actionHandler: (name, context) => {
-    window.open(generateUrl('/apps/mdpreview/preview?fileID=' + context.fileInfoModel.attributes.id), '_blank');
+    window.location.href = generateUrl('/apps/mdpreview/preview?fileID=' + context.fileInfoModel.attributes.id);
+    // window.open(generateUrl('/apps/mdpreview/preview?fileID=' + context.fileInfoModel.attributes.id), '_blank');
   },
 });
