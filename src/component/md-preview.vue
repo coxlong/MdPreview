@@ -1,7 +1,7 @@
 <template>
 	<div style="width: 100%;">
-		<VMdEditor height="90%"
-			:model-value="modelValue"
+		<VMdEditor v-model="content"
+			height="90%"
 			:include-level="[1,2,3]"
 			:default-show-toc="true" />
 	</div>
@@ -42,7 +42,30 @@ export default {
   },
   data() {
     return {
+      content: '',
     };
+  },
+  watch: {
+    modelValue(val, o) {
+      let tmp = val;
+      const arr = tmp.split('\n');
+      if (arr.length > 0 && arr[0] === '---') {
+        const start = 0;
+        let end = start + 1;
+        for (;end < arr.length; end++) {
+          if (arr[end] === '---') {
+            break;
+          }
+        }
+        if (end < arr.length) {
+          for (let i = 0; i <= end; i++) {
+            arr[i] = '> ' + arr[i].replace('---', '');
+          }
+          tmp = arr.join('\n');
+        }
+      }
+      this.content = tmp;
+    },
   },
   methods: {
   },

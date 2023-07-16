@@ -35033,7 +35033,31 @@ _kangc_v_md_editor__WEBPACK_IMPORTED_MODULE_0___default().use((0,_kangc_v_md_edi
     }
   },
   data: function data() {
-    return {};
+    return {
+      content: ''
+    };
+  },
+  watch: {
+    modelValue: function modelValue(val, o) {
+      var tmp = val;
+      var arr = tmp.split('\n');
+      if (arr.length > 0 && arr[0] === '---') {
+        var start = 0;
+        var end = start + 1;
+        for (; end < arr.length; end++) {
+          if (arr[end] === '---') {
+            break;
+          }
+        }
+        if (end < arr.length) {
+          for (var i = 0; i <= end; i++) {
+            arr[i] = '> ' + arr[i].replace('---', '');
+          }
+          tmp = arr.join('\n');
+        }
+      }
+      this.content = tmp;
+    }
   },
   methods: {}
 });
@@ -35115,11 +35139,14 @@ var _hoisted_1 = {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_VMdEditor = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("VMdEditor");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_VMdEditor, {
+    modelValue: $data.content,
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.content = $event;
+    }),
     height: "90%",
-    "model-value": $props.modelValue,
     "include-level": [1, 2, 3],
     "default-show-toc": true
-  }, null, 8 /* PROPS */, ["model-value"])]);
+  }, null, 8 /* PROPS */, ["modelValue"])]);
 }
 
 /***/ }),
@@ -87873,4 +87900,4 @@ myApp.mount('#content');
 
 /******/ })()
 ;
-//# sourceMappingURL=mdpreview-file.js.map?v=d9ac9e58cd0900dcf8f6
+//# sourceMappingURL=mdpreview-file.js.map?v=5ae4c3916efa861d2af2

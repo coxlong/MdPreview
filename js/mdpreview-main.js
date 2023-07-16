@@ -28584,7 +28584,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   computed: {
     /**
      * Return the currently selected note object
-     * @returns {Object|null}
+     *
+     * @return {object | null}
      */
     currentNote: function currentNote() {
       var _this = this;
@@ -28597,7 +28598,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     /**
      * Returns true if a note is selected and its title is not empty
-     * @returns {Boolean}
+     *
+     * @return {boolean}
      */
     savePossible: function savePossible() {
       return this.currentNote && this.currentNote.title !== '';
@@ -28638,7 +28640,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   methods: {
     /**
      * Create a new note and focus the note content field automatically
-     * @param {Object} note Note object
+     *
+     * @param {object} note Note object
      */
     openNote: function openNote(note) {
       var _this3 = this;
@@ -28691,7 +28694,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     /**
      * Create a new note by sending the information to the server
-     * @param {Object} note Note object
+     *
+     * @param {object} note Note object
      */
     createNote: function createNote(note) {
       var _this5 = this;
@@ -28729,7 +28733,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     /**
      * Update an existing note on the server
-     * @param {Object} note Note object
+     *
+     * @param {object} note Note object
      */
     updateNote: function updateNote(note) {
       var _this6 = this;
@@ -28760,7 +28765,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     /**
      * Delete a note, remove it from the frontend and show a hint
-     * @param {Object} note Note object
+     *
+     * @param {object} note Note object
      */
     deleteNote: function deleteNote(note) {
       var _this7 = this;
@@ -50753,4 +50759,4 @@ myApp.mount('#content');
 
 /******/ })()
 ;
-//# sourceMappingURL=mdpreview-main.js.map?v=25c30804b8f8b2e966ab
+//# sourceMappingURL=mdpreview-main.js.map?v=6743001acc9a03ec2d66
