@@ -20,11 +20,13 @@
     "stylelint:fix": "stylelint css/*.css css/*.scss src/**/*.scss src/**/*.vue --fix"
   },
   "dependencies": {
+    "@kangc/v-md-editor": "^2.3.15",
     "@nextcloud/axios": "^1.10.0",
     "@nextcloud/dialogs": "^3.1.4",
+    "@nextcloud/initial-state": "^2.1.0",
     "@nextcloud/router": "^2.0.0",
     "@nextcloud/vue": "^5.4.0",
-    "vue": "^2.7.0"
+    "vue": "^3.0.0"
   },
   "browserslist": [
     "extends @nextcloud/browserslist-config"
@@ -38,6 +40,6 @@
     "@nextcloud/browserslist-config": "^2.2.0",
     "@nextcloud/eslint-config": "^8.0.0",
     "@nextcloud/stylelint-config": "^2.1.2",
-    "@nextcloud/webpack-vue-config": "^5.2.1"
+    "@nextcloud/webpack-vue-config": "github:nextcloud/webpack-vue-config#vue3"
   }
 }
